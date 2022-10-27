@@ -5,9 +5,9 @@ Copy inputs of a Keyboard, PS4 Controller or Xbox Controller to multiple virtual
 Originally made for Rocket League, but can be applied to other games and controls by changing the code in [`input_methods.py`](input_methods.py) to map
 inputs to different controls.
 
-## Demo
+## Demo Video
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tG9pW9u5CfY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![A video showcasing 4 players on one screen moving exactly in sync](https://img.youtube.com/vi/tG9pW9u5CfY/maxresdefault.jpg)](https://www.youtube.com/watch?v=tG9pW9u5CfY)
 
 ## How do I use it?
 
