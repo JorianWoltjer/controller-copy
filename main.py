@@ -32,6 +32,11 @@ def press_buttons(controller: vController, report: Report):
     controller.set_value('BtnShoulderL', report.button_shoulder_l)
     controller.set_value('TriggerL', report.trigger_l)
     controller.set_value('TriggerR', report.trigger_r)
+    
+def join_rocket_league(controller: vController):
+    controller.set_value('BtnA', 1)
+    sleep(0.2)
+    controller.set_value('BtnA', 0)
 
 
 def on_keyboard_press(key):
@@ -67,20 +72,18 @@ if not isinstance(INPUT, XboxControllerInput):
 controllers += [(vController(percent=False), True) for _ in range(EXTRA_CONTROLLERS)]
 
 # Join Rocket League (optional)
-sleep(2)  # Time to Alt+Tab into game
-
 for controller, enabled in controllers:
     if enabled:
-        controller.set_value('BtnA', 1)
-        sleep(0.1)
-        controller.set_value('BtnA', 0)
+        controller.set_value('BtnStart', 1)
+
+sleep(3)  # Time to Alt+Tab into game
 
 for controller, enabled in controllers:
     if enabled:
         print(f"Player {controller.id} joined")
-        controller.set_value('BtnStart', 1)  # Press start
-        sleep(0.2)
-        controller.set_value('BtnStart', 0)  # Release start
+        join_rocket_league(controller)
+        controller.set_value('BtnStart', 0)
+        sleep(0.5)
 
 # Copy loop
 while True:
